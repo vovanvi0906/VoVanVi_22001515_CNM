@@ -1,0 +1,31 @@
+<%- include('../partials/header') %>
+
+<h2>Thêm sản phẩm</h2>
+
+<% if (error) { %>
+  <p style="color:red;"><%= error %></p>
+<% } %>
+
+<form action="/products" method="POST" enctype="multipart/form-data">
+  <div>
+    <label>Tên sản phẩm:</label>
+    <input type="text" name="name" value="<%= product?.name || '' %>">
+  </div>
+  <div>
+    <label>Giá:</label>
+    <input type="number" name="price" value="<%= product?.price || '' %>">
+  </div>
+  <div>
+    <label>Tồn kho:</label>
+    <input type="number" name="unit_in_stock" value="<%= product?.unit_in_stock || '' %>">
+  </div>
+  <div>
+    <label>Ảnh:</label>
+    <input type="file" name="url_image">
+  </div>
+  <button type="submit">Lưu</button>
+</form>
+
+<p><a href="/">Quay lại</a></p>
+
+<%- include('../partials/footer') %>

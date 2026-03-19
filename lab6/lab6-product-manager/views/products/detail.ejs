@@ -1,0 +1,16 @@
+<%- include('../partials/header') %>
+
+<h2>Chi tiết sản phẩm</h2>
+
+<p><strong>ID:</strong> <%= product.id %></p>
+<p><strong>Tên:</strong> <%= product.name %></p>
+<p><strong>Giá:</strong> <%= product.price %></p>
+<p><strong>Tồn kho:</strong> <%= product.unit_in_stock %></p>
+
+<% if (product.url_image) { %>
+  <p><img src="<%= product.url_image %>" width="200"></p>
+<% } %>
+
+<p><a href="/">Quay lại</a></p>
+
+<%- include('../partials/footer') %>
